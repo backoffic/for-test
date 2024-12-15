@@ -91,6 +91,7 @@
     /* Hide the input field by default */
     #inputField {
         display: none;
+        
       }
 
       .switch {
@@ -152,7 +153,13 @@
       .slider.round:before {
         border-radius: 50%;
       }
-
+      .container {
+  display: flex;
+  justify-content: center; /* Centers the elements horizontally */
+  align-items: center;     /* Centers the elements vertically */
+  flex-direction: column;  /* Aligns elements vertically */
+  height: 100vh;           /* Makes the container take up full height */
+}
 </style>
 </head>
 <body>
@@ -169,18 +176,18 @@
   <input type="text" id="mainvlan" placeholder="   mainvlan " />
 
   
-<div style="align-items: center;">
+  <div class="container">
   <label class="switch"> 
     <input type="checkbox" id="toggleCheckbox"  id="textLabel"   checked  /> 
     <span class="slider" ></span> </label
   >
   <span id="textLabel">Auto innerVlan</span>
-</div>
+
   <div id="inputField">
     <label for="textInput"></label>
     <input type="text" id="innerVlanInput" placeholder="InnerVlan" />
   </div>
-
+</div>
   <script>
     const checkbox = document.getElementById("toggleCheckbox");
     const inputField = document.getElementById("inputField");
